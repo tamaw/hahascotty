@@ -1,2 +1,10 @@
+import Test.QuickCheck (quickCheck, Positive, Small)
+
+import Lib 
+
 main :: IO ()
-main = putStrLn "Test suite not yet implemented"
+main = do 
+    quickCheck test
+
+test :: Int -> Bool
+test a = fibn a == fibn a
